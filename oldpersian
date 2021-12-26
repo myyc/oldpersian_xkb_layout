@@ -1,0 +1,73 @@
+// Perso-arabic layout
+// Inspired by the MacOS Arabic QWERTY layout
+// Should have all the Arabic and Persian symbols, useful for
+// learners who are proficient on a QWERTY keyboard.
+
+default partial
+xkb_symbols "basic" {
+name[Group1]= "Old Persian";
+
+include "nbsp(zwnj2nb3nnb4)"
+include "level3(ralt_switch)"
+
+// it seems like the orthodox way of writing numbers in unicode is to juxtapose.
+// so instead of writing 3, 4, 5 etc. one writes 21, 22, 221 etc. until 9 (22221)
+// the numbers below belong to different sets and number 5 is missing so
+// using them instead of juxtaposing might make them look weird
+key <TLDE> { [  section,         at,          dead_stroke,           NoSymbol              ] };
+key <AE01> { [  0x01012415,               exclam,           0x010103D3,              exclamdown            ] };
+key <AE02> { [  0x01012456,               quotedbl,         0x010103D4,                    rightdoublequotemark  ] };
+key <AE03> { [  0x01012457,               numbersign,       sterling,              guillemotright        ] };
+key <AE04> { [  0x01012418,               currency,         dollar,                guillemotleft         ] };
+key <AE05> { [  5,               percent,          permille,              leftdoublequotemark   ] };
+key <AE06> { [  0x0101240B,               ampersand,        singlelowquotemark,    doublelowquotemark    ] };
+key <AE07> { [  0x01012443,               slash,            braceleft,             NoSymbol              ] };
+key <AE08> { [  0x0101240D,               parenleft,        bracketleft,           less                  ] };
+key <AE09> { [  0x0101240E,               parenright,       bracketright,          greater               ] };
+key <AE10> { [  0x010103D5,               equal,            braceright,            degree                ] };
+key <AE11> { [  plus,            question,         backslash,             questiondown          ] };
+key <AE12> { [  dead_acute,      dead_grave,       dead_cedilla,          dead_ogonek           ] };
+
+// the first three are not good placements but better than not having them
+// the rest are sort of phonetic. the logograms are in the keys right
+// of the alphabet keys.
+key <AD01> { [ 0x010103C2 ] }; // ssa/ça
+key <AD02> { [ 0x010103C1 ] }; // sha
+key <AD03> { [ 0x010103B0 ] }; // tha 
+key <AD04> { [ 0x010103BC, r, 0x010103BD ] }; // ra, ru
+key <AD05> { [ 0x010103AB, t, 0x010103AC ] }; // ta, tu
+key <AD06> { [ 0x010103B9 ] }; // ya
+key <AD07> { [ 0x010103A2 ] }; // u
+key <AD08> { [ 0x010103A1 ] }; // i
+key <AD09> { [ 0x010103C8, 0x010103C9, 0x010103CA ] }; // AM1, AM2, AMha
+key <AD10> { [ 0x010103B1 ] }; // pa
+
+key <AC01> { [ 0x010103A0 ] }; // a
+key <AC02> { [ 0x010103BF ] }; // sa
+key <AC03> { [ 0x010103AD, 0x010103AE, 0x010103AF ] }; // da, di, du
+key <AC04> { [ 0x010103B3 ] }; // fa
+key <AC05> { [ 0x010103A5, g, 0x010103A6 ] }; // ga, gu
+key <AC06> { [ 0x010103C3 ] }; // ha
+key <AC07> { [ 0x010103A9, 0x010103AA ] }; // ja, ji
+key <AC08> { [ 0x010103A3, k, 0x010103A4 ] }; // ka, ku
+key <AC09> { [ 0x010103BE ] }; // la
+key <AC10> { [ 0x010103CC, 0x010103CD ] }; // DH1, DH2
+key <AC11> { [ 0x010103CE, 0x010103CF ] }; // BG, BU
+key <AC12> { [ 0x010103CB ] }; // XSh
+
+key <AB01> { [ 0x010103C0 ] }; // za
+key <AB02> { [ 0x010103A7, 0x010103CB ] }; // xa, XSh
+key <AB03> { [ 0x010103A8 ] }; // ca
+key <AB04> { [ 0x010103BA, 0x010103BB ] }; // va, vi
+key <AB05> { [ 0x010103B2 ] };
+key <AB06> { [ 0x010103B4, n, 0x010103B5 ] }; // na, nu
+key <AB07> { [ 0x010103B6, 0x010103B7, 0x010103B8 ] }; // ma, mi, mu
+key <AB10> { [ 0x010103D0, underscore, minus, question ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "qwerty" {
+    include "oldpersian(basic)"
+    name[Group1]= "Old Persian";
+};
+
