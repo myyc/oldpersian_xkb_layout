@@ -15,8 +15,8 @@ include "level3(ralt_switch)"
 // the numbers below belong to different sets and number 5 is missing so
 // using them instead of juxtaposing might make them look weird
 key <TLDE> { [  section,         at,          dead_stroke,           NoSymbol              ] };
-key <AE01> { [  0x01012415,               exclam,           0x010103D3,              exclamdown            ] };
-key <AE02> { [  0x01012456,               quotedbl,         0x010103D4,                    rightdoublequotemark  ] };
+key <AE01> { [  0x010103D1,               0x010103D3, exclam,             exclamdown            ] };
+key <AE02> { [  0x010103D2,               0x010103D4, quotedbl,                   rightdoublequotemark  ] };
 key <AE03> { [  0x01012457,               numbersign,       sterling,              guillemotright        ] };
 key <AE04> { [  0x01012418,               currency,         dollar,                guillemotleft         ] };
 key <AE05> { [  5,               percent,          permille,              leftdoublequotemark   ] };
