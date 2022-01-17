@@ -32,6 +32,6 @@ the way you usually do (GNOME settings or anything else).
   is to juxtapose them, e.g. 21 for 3, 2221 for 7, 20-20-10 for
   fifty (without the dashes), and so on. You can of course do
   that.
-* For some reason, QT5 apps aren't supported. This is probably
-  a QT bug, since QT6 works – although it doesn't render correctly,
-  but that's probably a problem on my machine.
+* Some distributions have a QT5 bug that prevents this layout
+  from working as an input method. This isn't present everywhere
+  and it's been fixed on QT6.
